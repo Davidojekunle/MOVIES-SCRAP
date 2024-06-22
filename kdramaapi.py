@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from kdrama.sessions import get_all_movies, add_movie
+from kdrama.sessions import get_all_movies, add_movie, search_movies, get_trending_movies
 from fastapi import HTTPException
 from kdrama.schemas import kdrama
 
@@ -21,7 +21,16 @@ async def addmovie(kdrama : kdrama):
     else:
         return kdrama
 
-        
-    
+@route.get("/search")
+def search(q: str):
+    movies = search_movies(q)
+    if not movies:
+        raise HTTPException(status_code=404, detail="No movies found")
+    return movies
 
-
+@route.get("/trending")
+def trending_movies():
+    movies = get_trending_movies()
+    if not movies:
+        raise HTTPException(status_code=404, detail="No trending movies found")
+    return movies

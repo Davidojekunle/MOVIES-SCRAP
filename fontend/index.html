@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDramaFlix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">KDramaFlix</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search Kdramas...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li>Home</li>
+            <li>TV Shows</li>
+            <li>Movies</li>
+            <li>My List</li>
+        </ul>
+        <div class="nav-profile">
+            <img src="https://i.pravatar.cc/30" alt="Profile" class="avatar">
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Discover Korean Dramas</h1>
+            <p>Dive into a world of romance, action, and suspense with our vast collection of K-dramas.</p>
+            <button class="play-button">▶ Play Latest</button>
+            <button class="info-button">ⓘ More Info</button>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title">Trending Now</h2>
+        <div class="movie-slider" id="trendingSlider"></div>
+
+        <h2 class="section-title">All K-Dramas</h2>
+        <div class="movie-grid" id="movieGrid"></div>
+    </main>
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalYear"></p>
+            <a id="modalDownload" href="#" target="_blank">Download</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<!-- ... previous code ... -->
+
+<div id="movieModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-flex">
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="Movie Poster" class="modal-image">
+                <div class="modal-overlay">
+                    <button id="modalDownload" class="download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+            <div class="modal-details">
+                <h2 id="modalTitle"></h2>
+                <p id="modalYear" class="modal-year"></p>
+                <p id="modalDescription" class="modal-desc"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ... rest of the code ... -->
+</html> 

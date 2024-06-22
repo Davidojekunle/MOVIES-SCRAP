@@ -8,5 +8,5 @@ class Kdrama(SQLModel, table=True):
     date : int | None = Field(default=None)
     download_link : str
     description: str 
-    
+      
 create_db_and_tables()

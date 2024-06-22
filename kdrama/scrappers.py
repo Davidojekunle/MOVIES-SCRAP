@@ -84,7 +84,7 @@ def awafim():
             add_movie(f_head, f_date, desciption, f_image, download)
 
 
-nkiri()
+
 awafim ()       
             
    

@@ -1,0 +1,298 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #141414;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(to bottom, #000, transparent);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: #fff;
+}
+
+.avatar {
+    border-radius: 5px;
+}
+
+.hero-section {
+    height: 80vh;
+    background-image: url('https://img.awafim.tv/images/EZXy23kD4RPD.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.play-button, .info-button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play-button {
+    background-color: #fff;
+    color: #000;
+}
+
+.info-button {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: #fff;
+}
+
+.section-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 20px 50px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 50px;
+}
+
+.movie-card {
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.movie-image {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.movie-info {
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Previous styles remain unchanged */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+#searchBtn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.movie-slider {
+    padding: 50px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.movie-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-slider .movie-card {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.movie-slider .movie-image {
+    width: 250px;
+}
+
+.movie-slider {
+    padding: 50px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-image: url('https://nkiri.com/wp-content/uploads/2023/12/love-reset-korean-drama.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.movie-slider {
+    padding: 50px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: linear-gradient(to right, #141414, #333333);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: #141414;
+    margin: 3% auto;
+    width: 85%;
+    height: 90%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 300;
+    transition: color 0.3s;
+    z-index: 10;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn:hover {
+    color: #bbb;
+}
+
+.modal-flex {
+    display: flex;
+    height: 100%;
+}
+
+.modal-image-container {
+    position: relative;
+    flex: 1.5;
+    overflow: hidden;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.modal-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 80px 40px 40px;
+    background: linear-gradient(to top, rgba(20, 20, 20, 0.95) 10%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    background-color: #e50914; /* Netflix red */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:hover {
+    background-color: #b20710;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.download-btn i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.modal-details {
+    flex: 1;
+    padding: 40px;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.modal-details::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-details::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.modal-details h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.modal-year {
+    font-size: 1.4rem;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.modal-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ddd;
+}
+ 

@@ -10,13 +10,29 @@ def add_movie(name, date,description, image_link, url):
         session.commit()
         return "Movie added to database"
 
+
       
 def get_all_movies():
     with Session(engine) as session:
         movie = select(Kdrama)
         results = session.exec(movie).all()
         return results
+    
+def get_trending_movies():
+    with Session(engine) as session:
+        movies = session.exec(select(Kdrama).where(Kdrama.date >= 2021, Kdrama.date <= 2024)).all()
+        return movies
 
+def search_movies(query):
+    with Session(engine) as session:
+        # Case-insensitive search in name and description
+        movies = session.exec(
+            select(Kdrama).where(
+                (Kdrama.name.ilike(f"%{query}%")) | 
+                (Kdrama.description.ilike(f"%{query}%"))
+            )
+        ).all()
+        return movies
     
 
     
